@@ -1,31 +1,28 @@
 import Header from "./components/Header";
 import MessageList from "./components/MessageList";
 import MessageInput from "./components/MessageInput";
-import React, { useState , useEffect} from "react";
-import { doc, getDoc} from "firebase/firestore";
-import { db } from "./firebase";
+import React, {useState} from "react";
+import {useCollectionData} from "react-firebase-hooks/firestore"
+import {queryVar} from "./firebase";
 import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [sentMessage,setSentMessage] = useState(false);
-  const [messages,setMessages] = useState([]);
+  const [messages] = useCollectionData(queryVar,{idField: 'id'});
 
-  useEffect(() => {
-    if(sentMessage){
-    }
-
-  },[sentMessage])
+ 
 
 
 
 
   return (
-    <div className="cont flex flex-col justify-between">
-      <Header user={user} setUser={setUser} />
-      {user ? <MessageList /> : <></>}
-      {user ? <MessageInput user = {user} setSentMessage = {setSentMessage}/> : <></>}
+    <>
+    <Header user={user} setUser={setUser} />
+    <div className="cont">
+      {user ? <MessageList messages={messages} user = {user} /> : <></>}
     </div>
+    {user ? <MessageInput user = {user} /> : <></>}
+    </>
   );
 }
 
