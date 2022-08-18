@@ -22,8 +22,8 @@ const SignIn = ({setUser}) => {
   return (
     <button className="text-white bg-green-500 h-8 px-8 py-5 flex items-center gap-2 mx-4 my-1 rounded hover:bg-green-400 hover:text-gray-800 transition-all duration-150 ease-out"
     onClick={handleClick}>
-      <FaGoogle className="text-xl" />
-      <span className="text-lg font-bold">Sign in</span>
+      <span className="text-lg font-bold">Sign in with:</span>
+      <FaGoogle className="text-2xl" />
     </button>
   );
 };

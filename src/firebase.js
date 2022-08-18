@@ -17,11 +17,21 @@ export const auth = getAuth(app);
 export const GoogleProvider = new GoogleAuthProvider();
 export const db = getFirestore(app);
 export const messageRef = collection(db,"messages");
-export const queryVar = query(messageRef,orderBy("createdAt"),limit(10));
+export const queryVar = query(messageRef,orderBy("createdAt","asc"));
 
 
 async function addMessage(user,text){
     try{
+        if(text.length === 0 || text.trim(" ") === ""){
+            alert("Please enter a message");
+            throw Error("Messages cannot be empty");
+        }
+
+        if(text.length >= 250){
+            alert("Your message is larger than 150 words!");
+            throw Error("Messages cannot be larger than 150 words");
+        }
+
         await addDoc(messageRef,{
             ID:uuidv4(),
             UID:user.uid,
@@ -35,4 +45,4 @@ async function addMessage(user,text){
 }
 
 
-export {addMessage }
+export {addMessage}

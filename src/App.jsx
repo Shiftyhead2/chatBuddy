@@ -16,13 +16,13 @@ function App() {
 
 
   return (
-    <>
-    <Header user={user} setUser={setUser} />
-    <div className="cont">
-      {user ? <MessageList messages={messages} user = {user} /> : <></>}
+    <div className="main-div">
+      <Header user={user} setUser={setUser} />
+      <div className="cont">
+        {user ? <MessageList messages={messages} user = {user} /> : <></>}
+      </div>
+      {user ? <MessageInput user = {user} /> : <></>}
     </div>
-    {user ? <MessageInput user = {user} /> : <></>}
-    </>
   );
 }
 

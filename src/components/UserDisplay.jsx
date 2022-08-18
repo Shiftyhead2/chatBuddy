@@ -15,8 +15,9 @@ const UserDisplay = ({user,setUser}) => {
   }
 
   return (
-    <div className='text-white flex flex-col items-center mx-4 gap-1'>
-      <button className='bg-green-500 px-6 py-1 rounded hover:bg-green-400 hover:text-gray-800 transition-all duration-150 ease-out'
+    <div className='text-white flex flex-col items-center mx-4 gap-2'>
+      <p className="text-base">Welcome {user.displayName}</p>
+      <button className='bg-green-500 px-6 py-1 rounded font-bold hover:bg-green-400 hover:text-gray-800 transition-all duration-150 ease-out'
       onClick = {handleClick}>Sign Out</button>
     </div>
   );
