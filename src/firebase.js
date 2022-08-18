@@ -1,6 +1,6 @@
 import {initializeApp} from "firebase/app";
 import {getAuth,GoogleAuthProvider} from "firebase/auth";
-import {collection, getFirestore,serverTimestamp,addDoc,orderBy,limit,query} from "firebase/firestore";
+import {collection, getFirestore,serverTimestamp,addDoc,orderBy,query} from "firebase/firestore";
 import { v4 as uuidv4 } from 'uuid';
 
 const firebaseConfig = {
