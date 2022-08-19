@@ -28,15 +28,15 @@ const MessageInput = ({user}) => {
       <input
         type="text"
         placeholder="Enter a message here"
-        className="bg-stone-500 outline-none w-3/5 h-4/6 py-3 px-2 mx-3 placeholder:text-gray-200 md:w-4/5 rounded"
+        className="bg-stone-500 outline-none w-4/5 h-4/6 py-3 px-2 mx-3 placeholder:text-gray-200 placeholder:md:text-lg placeholder:sm:text-sm placeholder:text-xs  rounded"
         value = {value}
         onChange = {handleInput}
         min = "1"
         max = "250"
       ></input>
-      <button className="flex flex-row gap-2 justify-center items-center font-bold h-4/6 mx-4 bg-green-500 hover:bg-green-400 hover:text-gray-800 px-3 py-2 rounded transition-all duration-150 ease-out">
-        Send message
-        <AiOutlineSend className="text-xl" />
+      <button className="flex flex-row gap-2 justify-center items-center lg:font-bold  h-4/6 mx-4 bg-green-500 hover:bg-green-400 hover:text-gray-800 px-3 py-2 rounded transition-all duration-150 ease-out">
+        <span className="text-xs  md:text-sm">Send message</span>
+        <AiOutlineSend className="text-sm sm:text-lg md:text-xl" />
       </button>
     </form>
   );
