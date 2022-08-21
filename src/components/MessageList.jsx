@@ -14,7 +14,7 @@ const MessageList = ({messages,user}) => {
 
 
   return (
-    <div className='text-white flex flex-col my-16 md:my-18  gap-2'>
+    <div className='text-white flex flex-col my-14 sm:my-16 md:my-18  gap-2'>
       {messages && messages.map(msg => <Message key={msg.ID} message = {msg} user = {user} />)}
       <div ref = {messageEndRef}></div>
     </div>

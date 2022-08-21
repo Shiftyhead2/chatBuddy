@@ -10,11 +10,6 @@ function App() {
   const [user, setUser] = useState(null);
   const [messages] = useCollectionData(queryVar,{idField: 'id'});
 
- 
-
-
-
-
   return (
     <div className="main-div">
       <Header user={user} setUser={setUser} />

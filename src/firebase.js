@@ -19,7 +19,6 @@ export const db = getFirestore(app);
 export const messageRef = collection(db,"messages");
 export const queryVar = query(messageRef,orderBy("createdAt","asc"));
 
-
 async function addMessage(user,text){
     try{
         if(text.length === 0 || text.trim(" ") === ""){
@@ -40,7 +39,7 @@ async function addMessage(user,text){
             createdAt:serverTimestamp(),
         });         
     }catch(err){
-        console.error(err);
+        console.warn(err);
     }
 }
 
